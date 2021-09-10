@@ -8,14 +8,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link rel="stylesheet" href="./assets/css/main.css">
     <link rel="stylesheet" href="./assets/css/base.css">
+    <link rel="stylesheet" href="./assets/css/grid.css">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./assets/fonts/fontawesome-free-5.15.4-web/css/all.min.css">
 </head>
 <body>
     <div class="app">
         <header class="header">
-            <div class="grid">
-                <nav class="header__navbar">
+            <div class="grid wide">
+                <nav class="header__navbar hide-on-mobile-tablet">
                     <ul class="header__navbar-list">
                         <li class="header__navbar-item header__navbar-item--qr  header__navbar-item--separate">
                             Vào cửa hàng trên ứng dụng
@@ -153,7 +155,10 @@
                 </nav>
 
                 <div class="header-with-search">
-                    <div class="header__logo">
+                    <label for="mobile-search-checkbox" class="header__mobile-search">
+                        <i class="header__mobile-search-icon fas fa-search"></i>
+                    </label>
+                    <div class="header__logo hide-on-tablet">
                         <a href="#" class="header__logo-link">
                              <svg viewBox="0 0 192 65" class="header__logo-img">
                             <g fill-rule="evenodd">
@@ -164,7 +169,8 @@
                         </svg>
                         </a>
                     </div>
-                    <div class="header__search">
+                    <input type="checkbox" hidden id="mobile-search-checkbox" class="header__search-checkbox">
+                    <div class="header__search ">
                         <div class="header__search-input-wrap">
                             <input type="text" class="header__search-input" placeholder="Tìm sản phẩm, thương hiệu và shop">
                             <div class="header__search-history">
@@ -295,13 +301,26 @@
                     </div>
                 </div>
             </div>
-            
+            <ul class="header__sort-bar">
+                <li class="header__sort-item">
+                    <a href="" class="header__sort-link">Liên Quan</a>
+                </li>
+                <li class="header__sort-item header__sort-item--active">
+                    <a href="" class="header__sort-link">Mới Nhất</a>
+                </li>
+                <li class="header__sort-item">
+                    <a href="" class="header__sort-link">Bán Chạy</a>
+                </li>
+                <li class="header__sort-item">
+                    <a href="" class="header__sort-link">Giá </a>
+                </li>
+            </ul>
         </header>
 
         <div class="app__container">
-            <div class="grid">
-                <div class="grid__row app__content">
-                    <div class="grid__column-2">
+            <div class="grid wide">
+                <div class="row sm-gutter app__content">
+                    <div class="col l-2 m-0 c-0">
                         <nav class="category">
                             <h3 class="category-heading">
                                 <i class="category-heading-icon fas fa-list"></i>
@@ -327,8 +346,8 @@
                         </nav>
                     </div>
 
-                    <div class="grid__column-10">
-                        <div class="home-filter">
+                    <div class="col l-10 m-12 c-12">
+                        <div class="home-filter hide-on-mobile-tablet">
                             <span class="home-filter__label">Sắp Xếp Theo</span>
                             <button class="home-filter-btn btn">Phổ Biến</button>
                             <button class="home-filter-btn btn btn--primary">Mới Nhất</button>
@@ -361,9 +380,61 @@
                             </div>
                         </div>
 
+                        <nav class="mobile-category">
+                            <ul class="mobile-category__list">
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">Điện Thoại & Phụ Kiện</a>
+                                </li>
+                            
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">Máy Tính & Laptop</a>
+                                </li>
+                           
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">Máy Ảnh & Máy Quay Phim</a>
+                                </li>
+                            
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">Điện Thoại & Phụ Kiện</a>
+                                </li>
+                            
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">Máy Tính & Laptop</a>
+                                </li>
+                           
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">Máy Ảnh & Máy Quay Phim</a>
+                                </li>
+                            
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">Điện Thoại & Phụ Kiện</a>
+                                </li>
+                            
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">Máy Tính & Laptop</a>
+                                </li>
+                            
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">Máy Ảnh & Máy Quay Phim</a>
+                                </li>
+                            
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">Điện Thoại & Phụ Kiện</a>
+                                </li>
+                           
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">Máy Tính & Laptop</a>
+                                </li>
+                            
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">Máy Ảnh & Máy Quay Phim</a>
+                                </li>
+                            </ul>
+                        </nav>
+
                         <div class="home-product">
-                            <div class="grid__row">
-                                <div class="grid__column-2-4 ">
+                            <div class="row sm-gutter">
+                                <div class="col l-2-4 m-4 c-6  ">
                                     <a class="home-product-item" href="#">
                                         <div class="home-product-item-img" style="background-image: url(./assets/img/product/miwatch.png);"></div>
                                         <!-- <img src="./assets/img/product/miwatch.png" alt="" class="home-product-item-img"> -->
@@ -403,7 +474,7 @@
                                     </a> 
                                     
                                 </div>
-                                <div class="grid__column-2-4 ">
+                                <div class="col l-2-4 m-4 c-6  ">
                                     <a class="home-product-item" href="#">
                                         <div class="home-product-item-img" style="background-image: url(./assets/img/product/miwatch.png);"></div>
                                         <!-- <img src="./assets/img/product/miwatch.png" alt="" class="home-product-item-img"> -->
@@ -443,7 +514,7 @@
                                     </a> 
                                     
                                 </div>
-                                <div class="grid__column-2-4 ">
+                                <div class="col l-2-4 m-4 c-6  ">
                                     <a class="home-product-item" href="#">
                                         <div class="home-product-item-img" style="background-image: url(./assets/img/product/miwatch.png);"></div>
                                         <!-- <img src="./assets/img/product/miwatch.png" alt="" class="home-product-item-img"> -->
@@ -483,7 +554,7 @@
                                     </a> 
                                     
                                 </div>
-                                <div class="grid__column-2-4 ">
+                                <div class="col l-2-4 m-4 c-6  ">
                                     <a class="home-product-item" href="#">
                                         <div class="home-product-item-img" style="background-image: url(./assets/img/product/miwatch.png);"></div>
                                         <!-- <img src="./assets/img/product/miwatch.png" alt="" class="home-product-item-img"> -->
@@ -523,7 +594,7 @@
                                     </a> 
                                     
                                 </div>
-                                <div class="grid__column-2-4 ">
+                                <div class="col l-2-4 m-4 c-6  ">
                                     <a class="home-product-item" href="#">
                                         <div class="home-product-item-img" style="background-image: url(./assets/img/product/miwatch.png);"></div>
                                         <!-- <img src="./assets/img/product/miwatch.png" alt="" class="home-product-item-img"> -->
@@ -563,7 +634,7 @@
                                     </a> 
                                     
                                 </div>
-                                <div class="grid__column-2-4 ">
+                                <div class="col l-2-4 m-4 c-6  ">
                                     <a class="home-product-item" href="#">
                                         <div class="home-product-item-img" style="background-image: url(./assets/img/product/miwatch.png);"></div>
                                         <!-- <img src="./assets/img/product/miwatch.png" alt="" class="home-product-item-img"> -->
@@ -603,7 +674,7 @@
                                     </a> 
                                     
                                 </div>
-                                <div class="grid__column-2-4 ">
+                                <div class="col l-2-4 m-4 c-6  ">
                                     <a class="home-product-item" href="#">
                                         <div class="home-product-item-img" style="background-image: url(./assets/img/product/miwatch.png);"></div>
                                         <!-- <img src="./assets/img/product/miwatch.png" alt="" class="home-product-item-img"> -->
@@ -643,7 +714,7 @@
                                     </a> 
                                     
                                 </div>
-                                <div class="grid__column-2-4 ">
+                                <div class="col l-2-4 m-4 c-6  ">
                                     <a class="home-product-item" href="#">
                                         <div class="home-product-item-img" style="background-image: url(./assets/img/product/miwatch.png);"></div>
                                         <!-- <img src="./assets/img/product/miwatch.png" alt="" class="home-product-item-img"> -->
@@ -683,7 +754,7 @@
                                     </a> 
                                     
                                 </div>
-                                <div class="grid__column-2-4 ">
+                                <div class="col l-2-4 m-4 c-6  ">
                                     <a class="home-product-item" href="#">
                                         <div class="home-product-item-img" style="background-image: url(./assets/img/product/miwatch.png);"></div>
                                         <!-- <img src="./assets/img/product/miwatch.png" alt="" class="home-product-item-img"> -->
@@ -723,7 +794,7 @@
                                     </a> 
                                     
                                 </div>
-                                <div class="grid__column-2-4 ">
+                                <div class="col l-2-4 m-4 c-6  ">
                                     <a class="home-product-item" href="#">
                                         <div class="home-product-item-img" style="background-image: url(./assets/img/product/miwatch.png);"></div>
                                         <!-- <img src="./assets/img/product/miwatch.png" alt="" class="home-product-item-img"> -->
@@ -763,7 +834,7 @@
                                     </a> 
                                     
                                 </div>
-                                <div class="grid__column-2-4 ">
+                                <div class="col l-2-4 m-4 c-6  ">
                                     <a class="home-product-item" href="#">
                                         <div class="home-product-item-img" style="background-image: url(./assets/img/product/miwatch.png);"></div>
                                         <!-- <img src="./assets/img/product/miwatch.png" alt="" class="home-product-item-img"> -->
@@ -803,7 +874,7 @@
                                     </a> 
                                     
                                 </div>
-                                <div class="grid__column-2-4 ">
+                                <div class="col l-2-4 m-4 c-6  ">
                                     <a class="home-product-item" href="#">
                                         <div class="home-product-item-img" style="background-image: url(./assets/img/product/miwatch.png);"></div>
                                         <!-- <img src="./assets/img/product/miwatch.png" alt="" class="home-product-item-img"> -->
@@ -843,7 +914,7 @@
                                     </a> 
                                     
                                 </div>
-                                <div class="grid__column-2-4 ">
+                                <div class="col l-2-4 m-4 c-6  ">
                                     <a class="home-product-item" href="#">
                                         <div class="home-product-item-img" style="background-image: url(./assets/img/product/miwatch.png);"></div>
                                         <!-- <img src="./assets/img/product/miwatch.png" alt="" class="home-product-item-img"> -->
@@ -883,7 +954,7 @@
                                     </a> 
                                     
                                 </div>
-                                <div class="grid__column-2-4 ">
+                                <div class="col l-2-4 m-4 c-6  ">
                                     <a class="home-product-item" href="#">
                                         <div class="home-product-item-img" style="background-image: url(./assets/img/product/miwatch.png);"></div>
                                         <!-- <img src="./assets/img/product/miwatch.png" alt="" class="home-product-item-img"> -->
@@ -923,7 +994,7 @@
                                     </a> 
                                     
                                 </div>
-                                <div class="grid__column-2-4 ">
+                                <div class="col l-2-4 m-4 c-6  ">
                                     <a class="home-product-item" href="#">
                                         <div class="home-product-item-img" style="background-image: url(./assets/img/product/miwatch.png);"></div>
                                         <!-- <img src="./assets/img/product/miwatch.png" alt="" class="home-product-item-img"> -->
@@ -1008,9 +1079,9 @@
 
 
         <footer class="footer">
-            <div class="grid">
-                <div class="grid__row">
-                    <div class="grid__column-2-4">
+            <div class="grid wide footer__content">
+                <div class="row">
+                    <div class="col l-2-4 m-4 c-6 ">
                         <h3 class="footer__heading">Chăm Sóc Khách Hàng</h3>
                         <ul class="footer-list">
                             <li class="footer-item">
@@ -1024,7 +1095,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="grid__column-2-4">
+                    <div class="col l-2-4 m-4 c-6 ">
                         <h3 class="footer__heading">Về Shopee</h3>
                         <ul class="footer-list">
                             <li class="footer-item">
@@ -1038,7 +1109,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="grid__column-2-4">
+                    <div class="col l-2-4 m-4 c-6 ">
                         <h3 class="footer__heading">Thanh Toán</h3>
                         <ul class="footer-list">
                             <li class="footer-item">
@@ -1052,7 +1123,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="grid__column-2-4">
+                    <div class="col l-2-4 m-4 c-6 ">
                         <h3 class="footer__heading">Theo Dõi Chúng Tôi Trên</h3>
                         <ul class="footer-list">
                             <li class="footer-item">
@@ -1075,7 +1146,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="grid__column-2-4">
+                    <div class="col l-2-4 m-8 c-6 hide-on-mobile ">
                         <h3 class="footer__heading">Vào Cửa Hàng Trên Ứng Dụng</h3>
                         <div class="footer__download">
                             <img src="./assets/img/qrcode.png" alt="" class="footer__download-qr">
@@ -1098,8 +1169,8 @@
                
             </div>
             <div class="footer__bottom">
-                <div class="grid">
-                    <div class="footer__container">
+                <div class="grid wide">
+                    <div class="footer__container hide-on-mobile">
                         <div class="footer__container-text ">
                            <a href="" class="footer__container-text-link ">CHÍNH SÁCH BẢO MẬT</a>
                         </div>
@@ -1122,11 +1193,11 @@
                                 <img src="./assets/img/bocongthuong-xanh.png" alt="" class="footer__notify-img">
                             </a>
                         </div>
-                        <p class="footer__notify-text">Công ty TNHH Shopee</p>   
+                        <p class="footer__notify-text">© Nguyễn Văn Hiếu</p>   
                     </div>
-                    <p class="footer__text">Địa chỉ: Tầng 4-5-6, Tòa nhà Capital Place, số 29 đường Liễu Giai, Phường Ngọc Khánh, Quận Ba Đình, Thành phố Hà Nội, Việt Nam. Tổng đài hỗ trợ: 19001221 - Email: cskh@hotro.shopee.vn</p> 
-                    <p class="footer__text">Chịu Trách Nhiệm Quản Lý Nội Dung: Nguyễn Đức Trí - Điện thoại liên hệ: 024 73081221 (ext 4678)</p> 
-                    <p class="footer__text">Mã số doanh nghiệp: 0106773786 do Sở Kế hoạch & Đầu tư TP Hà Nội cấp lần đầu ngày 10/02/2015</p> 
+                    <p class="footer__text">Địa chỉ: Đồng Tháp, Việt Nam. Tổng đài hỗ trợ: 0365354126 - Email: 19521510@gm.uit.edu.vn</p> 
+                    <p class="footer__text">Chịu Trách Nhiệm Quản Lý Nội Dung: F8 - https://fullstack.edu.vn/</p> 
+                    <p class="footer__text">Nguyễn Văn Hiếu remake in courses  </p> 
                     <p class="footer__text footer__text-mar ">© 2021 - Bản quyền thuộc về Công ty TNHH Shopee</p> 
                 </div>
             </div>
